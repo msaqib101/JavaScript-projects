@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+function Stars(num) {
+    // Ensure the input is a positive integer
+    if (num < 0) {
+        document.write("Please enter a positive integer.");
+        return;
+    }
+
+    // Print stars
+    for (let i = 1; i <= num ; i++) {
+        document.write("*"); 
+    }
+    
+}
+
+// Get user input
+var input = prompt("Enter a number to print stars:");
+
+var star =Stars(input);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
