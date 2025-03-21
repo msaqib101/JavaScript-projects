@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+
+
+function piza_detail(pizza, price) {
+    var orderNumber = Math.random()
+    return "Pizza: " + pizza +"<br>" +" Price: " + price + "<br>" + "Payment received: " + price + "<br>" + " Order number: #" + orderNumber;
+}
+
+var pizzaType = prompt("Enter the type of pizza you want to order:");
+var pizzaPrice = prompt("Enter the price of the pizza:");
+
+
+document.write("The waiter provides the " + pizzaType + " pizza and recive bill:" + pizzaPrice +"<br>");
+
+
+var orderDetails = piza_detail(pizzaType, pizzaPrice);
+
+
+document.write(orderDetails);
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    
+    
+</body>
+</html>
