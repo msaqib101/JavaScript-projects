@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculateHeight(name,inche){
+            var name = prompt("Enter a your name");
+            var height = parseInt(prompt("Enter height in inches"));
+            var feet = Math.floor(height/12);
+            var inches = height % 12;
+            document.getElementById("result").innerHTML= `${name} ,you are ${feet} feet and ${inches} inches tall`
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Height Calculate</h1>
+    <button onclick="calculateHeight()"> Calulate Height</button>
+    <div id="result"></div>
+</body>
+</html>
