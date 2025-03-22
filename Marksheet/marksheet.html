@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marksheet Generator</title>
+    <script>
+        function getMarksheet() {
+         
+            const name = prompt("Enter your Name:");
+            const rollNo = prompt("Enter your Roll Number:");
+
+        
+            const subjects = ["English", "Maths", "Science", "Social Studies", "Computer", "Urdu"];
+            const marks = {};
+            let totalMarks = 0;
+
+          
+            for (let i = 0; i < subjects.length; i++) {
+                let mark;
+                do {
+                    mark = prompt(`Enter marks for ${subjects[i]} (0-100):`);
+                    mark = parseFloat(mark);
+                } while (isNaN(mark) || mark < 0 || mark > 100);
+                
+                marks[subjects[i]] = mark;
+                totalMarks += mark;
+            }
+
+            
+            const totalSubjects = subjects.length;
+            const percentageValue = (totalMarks / (totalSubjects * 100)) * 100;
+
+            
+            let grade;
+            if (percentageValue > 85) {
+                grade = "A+";
+            } else if (percentageValue > 75) {
+                grade = "A";
+            } else if (percentageValue > 65) {
+                grade = "B+";
+            } else if (percentageValue > 60) {
+                grade = "B";
+            } else if (percentageValue > 55) {
+                grade = "C";
+            } else if (percentageValue > 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            
+            let output = `************** MarkSheet ************<br><br>`;
+            output += `Name: ${name}<br>`;
+            output += `Roll No: ${rollNo}<br>`;
+            output += `Subjects\tMarks<br>`;
+            for (let subject in marks) {
+                output += `${subject}: ${marks[subject]}<br>`;
+            }
+            output += `\nYour total marks = ${totalMarks}<br>`;
+            output += `You got a ${percentageValue.toFixed(2)}%<br>`;
+            output += `and have a Grade "${grade}"`;
+
+            // document.write(output);
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>Marksheet Generator</h1>
+    <button onclick="getMarksheet()">Generate Marksheet</button>
+    <div id="result"></div>
+</body>
+</html>
